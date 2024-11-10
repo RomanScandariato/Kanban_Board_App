@@ -28,6 +28,7 @@ if (process.env.PORT) {
 
   // Create a catch-all route with a wildcard(*) to send the index.html file in client/dist
   app.get('*', (_, res) => {
+    console.log('DIRNAME YOOOOOOO', __dirname);
     res.sendFile(join(__dirname, '../client/dist','index.html'));
   });
 }
