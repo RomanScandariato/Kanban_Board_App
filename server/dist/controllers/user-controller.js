@@ -40,34 +40,11 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
     const { username, password } = req.body;
     // Find a user in the database by the username provided in req.body
-    const user = await User.findOne({
-        where: {
-            username
-        }
-    });
     // If no user found, send a 403 json response with a user not found message and return
-    if (!user) {
-        res.status(403).json({
-            message: 'No user found with that email address'
-        });
-        return;
-    }
     // If user is found, verify the password is correct (ie. user.validatePassword(password))
-    const valid_pass = await user.validatePassword(password);
     // If password is validated then create a jwt token using the createToken function above and passing their id
-    if (!valid_pass) {
-        res.status(403).json({
-            message: 'Incorrect password'
-        });
-        return;
-    }
-    const token = createToken(user.id);
     // Send a cookie back with the name of token and the token as value. Make sure to set httpOnly in the options object (ie. res.cookie())
-    res.cookie('token', token, {
-        httpOnly: true
-    });
-    // Send a json response back with the user attached
-    res.json(user);
+    // Send the user in a json response - res.json(user)
 };
 // Retrieve a user by their jwt
 // GET /auth/user

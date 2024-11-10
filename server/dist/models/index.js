@@ -10,6 +10,10 @@ const sequelize = process.env.DB_URL
         dialect: 'postgres',
         dialectOptions: {
             decimalNumbers: true,
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
         },
     });
 const User = UserFactory(sequelize);
