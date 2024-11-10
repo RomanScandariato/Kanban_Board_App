@@ -5,7 +5,7 @@ import { blockGuests } from './middleware/auth.js';
 
 const router = Router();
 
-router.use('/auth', authRoutes);
+router.use('/api/auth', authRoutes);
 
 // TODO: Add the blockGuests middleware function to our route to block unauthenticated users from triggering any of the apiRoutes
 router.use('/api', blockGuests, apiRoutes);
