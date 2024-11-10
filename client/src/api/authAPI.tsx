@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const login = async (userInfo: UserLogin) => {
   // TODO: make a POST request to the login route '/auth/login' with the userInfo
-  const res = await axios.post('/auth/login', userInfo);
+  const res = await axios.post('/api/auth/login', userInfo);
 
   // TODO: return the user object from the response
   return res.data;
@@ -11,14 +11,14 @@ const login = async (userInfo: UserLogin) => {
 }
 
 const register = async (userInfo: UserLogin) => {
-  const res = await axios.post('/auth/register', userInfo);
+  const res = await axios.post('/api/auth/register', userInfo);
 
   return res.data;
 }
 
 export const getUser = async () => {
   // TODO: Make a GET request to '/auth/user' to get the logged in user's data
-  const res = await axios.get('/auth/user');
+  const res = await axios.get('/api/auth/user');
 
   // TODO: return the user object from the response
   return res.data;
@@ -26,7 +26,7 @@ export const getUser = async () => {
 
 export const logOut = async () => {
   // TODO: Make a GET request to '/auth/logout' to delete the user's cookie and log them out
-  const res = await axios.get('/auth/logout');
+  const res = await axios.get('/api/auth/logout');
 
   return res.status;
 }
