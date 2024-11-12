@@ -45,7 +45,7 @@ Be able to easily plan and create plans with a simple and effective Kanban Board
 
 ## Links
 Github: https://github.com/RomanScandariato/Kanban_Board_App <br><br>
-Deployed Link: Not Currently Deployed <br><br >
+Deployed Link: https://kanban-board-app-retry.onrender.com/ <br><br >
 
 ## License
 
